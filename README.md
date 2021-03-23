@@ -1,3 +1,56 @@
+## 建立Task
+
+### 宣告Task 
+
+### 執行Task
+
+- 方法一、已安裝Gradle
+
+有在全域變數設定Gradle
+
+```
+gradle $TASK_NAME
+```
+
+- 方法二、Gradlew
+
+在專案目錄有下載Gradle wrapper
+
+```
+./gradlew $TASK_NAME
+```
+
+
+## 撰寫腳本
+
+### 宣告變數
+
+- 區域變數(Local variables)
+
+藉由`val`來當作宣告關鍵字
+
+```
+val hello = "hello"
+
+tasks.register("print") {
+	println(hello)
+}
+```
+
+- 額外屬性(Extra properties)
+
+```
+val appVersion by extra("1.0.0")
+
+tasks.register("printProperties") {
+    doLast {
+        println(appVersion)
+    }
+}
+```
+
+更多細節參考[ExtraProperty]
+
 ## 處理檔案
 
 ### 建立資料夾
